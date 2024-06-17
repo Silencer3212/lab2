@@ -1,4 +1,8 @@
-﻿using System;
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
+
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -39,7 +43,7 @@ namespace ProtectedWeb.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Sneakers",
+                Name: "Sneakers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)

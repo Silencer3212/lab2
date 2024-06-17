@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z/4LzkQWLoXTZeMtKBMZ8Ddqr9cpJYBkKVL8cILK3KeN0g7JpdpE1aD8o5BLeNGwXiIfBDc8p+3sAFtt2APAPw==",
+  "dgSpecHash": "ri77hyOVC9jYcs/P0+wgvIwuFoceLmZt/nCUWAGrF7urpJdrVnyTUNLLWw1TiwK6TohHV4a+3uU2Yl6AlC8Vmw==",
   "success": true,
-  "projectFilePath": "C:\\Lab1\\ProtectedWeb\\ProtectedWeb.csproj",
+  "projectFilePath": "C:\\lab_2\\ProtectedWeb\\ProtectedWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlad_\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\vlad_\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.22\\microsoft.aspnetcore.authentication.jwtbearer.6.0.22.nupkg.sha512",
