@@ -1,59 +1,41 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
+// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+using System;
 
-namespace ProtectedWeb
+namespace ExampleWithoutErrors
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-            string con = builder.Configuration.GetConnectionString("Database");
-            builder.Services.AddDbContext<SneakersContext>(option => option.UseNpgsql(con));
-            // Add services to the container.
-
-            // Add services to the container.
-            builder.Services.AddRazorPages();
-            builder.Services.AddControllersWithViews();
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                    .AddJwtBearer(options =>
-                    {
-                        options.RequireHttpsMetadata = false;
-                        options.TokenValidationParameters = new TokenValidationParameters
-                        {
-                            ValidateLifetime = true,
-                            IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
-                            ValidateIssuerSigningKey = true,
-                        };
-                    });
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
+            int[] numbers = new int[5];
+            for (int i = 0; i < numbers.Length; i++) // Исправление #1: Индекс в пределах массива
             {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                numbers[i] = i * 2;
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            string text = string.Empty;
+            if (!string.IsNullOrEmpty(text)) // Исправление #2: Инициализация строкой и проверка на пустоту
+            {
+                Console.WriteLine("Text is not empty");
+            }
 
-            app.UseRouting();
+            int a = 10;
+            int b = 1; // Исправление #3: Избегаем деления на ноль
+            int result = a / b;
 
-            app.UseAuthorization();
+            int[] array = new int[10];
+            for (int j = 0; j < array.Length; j++)
+            {
+                array[j] = j * 2;
+            }
+            Console.WriteLine(array[9]); // Исправление #4: Индекс в пределах массива
 
-            app.MapRazorPages();
-
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}"
-                );
-
-            app.Run();
+            string input = Console.ReadLine();
+            if (input.Equals("Hello", StringComparison.Ordinal)) // Исправление #5: Используем метод Equals для сравнения строк
+            {
+                Console.WriteLine("Hi there!");
+            }
         }
     }
 }
